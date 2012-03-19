@@ -1,27 +1,26 @@
-<h1>Listing vendors</h1>
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Category</th>
-    <th>Rating</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @vendors.each do |vendor| %>
-  <tr>
-    <td><%= vendor.name %></td>
-    <td><%= vendor.category %></td>
-    <td><%= vendor.rating %></td>
-    <td><%= link_to 'Show', vendor %></td>
-    <td><%= link_to 'Edit', edit_vendor_path(vendor) %></td>
-    <td><%= link_to 'Destroy', vendor, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
+<h1>Vendors</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Category</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @vendors.each do |vendor| %>
+      <tr>
+        <td><%= vendor.id %></td>
+        <td><%= link_to vendor.name, vendor_path(vendor) %></td>
+        <td><%= link_to vendor.category.name, category_path(vendor) %></td>
+        <td>
+          <%= link_to 'Edit', edit_vendor_path(vendor), :class => 'btn btn-mini' %>
+          <%= link_to 'Destroy', vendor_path(vendor), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
-<br />
-
-<%= link_to 'New Vendor', new_vendor_path %>
+<%= link_to 'New', new_vendor_path, :class => 'btn btn-primary' %>

@@ -76,7 +76,7 @@ class VendorsController < ApplicationController
     @vendor.destroy
 
     respond_to do |format|
-      format.html { redirect_to vendors_url }
+      format.html { redirect_to vendors_url, notice: 'Vendor was successfully deleted.' }
       format.json { head :no_content }
     end
   end

@@ -1,20 +1,22 @@
-<p id="notice"><%= notice %></p>
+<h1>Vendor</h1>
 
 <p>
-  <b>Name:</b>
+  <b>Name</b><br>
   <%= @vendor.name %>
 </p>
 
 <p>
-  <b>Category:</b>
-  <%= @vendor.category %>
+  <b>Category</b><br>
+  <%= @vendor.category.name %>
 </p>
 
 <p>
-  <b>Rating:</b>
+  <b>Rating</b><br>
   <%= @vendor.rating %>
 </p>
 
-
-<%= link_to 'Edit', edit_vendor_path(@vendor) %> |
-<%= link_to 'Back', vendors_path %>
+<div class="form-actions">
+  <%= link_to 'Back', vendors_path, :class => 'btn'  %>
+  <%= link_to 'Edit', edit_vendor_path(@vendor), :class => 'btn' %>
+  <%= link_to 'Delete', vendor_path(@vendor), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+</div>

@@ -1,4 +1,6 @@
 Benchmark::Application.routes.draw do
+  resources :categories
+
   resources :vendors
 
   # The priority is based upon order of creation:
