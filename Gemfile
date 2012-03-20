@@ -11,6 +11,7 @@ gem 'taps'
 gem 'twitter-bootstrap-rails'
 gem 'bcrypt-ruby'
 gem 'simple_form'
+gem 'devise'
 
 
 # Bundle edge Rails instead:
