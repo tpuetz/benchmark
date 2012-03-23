@@ -5,6 +5,7 @@
       <th>ID</th>
       <th>Name</th>
       <th>Category</th>
+      <th>Created At</th>
       <th>Actions</th>
     </tr>
   </thead>
@@ -13,7 +14,8 @@
       <tr>
         <td><%= vendor.id %></td>
         <td><%= link_to vendor.name, vendor_path(vendor) %></td>
-        <td><%= link_to vendor.category.name, category_path(vendor) %></td>
+        <td><%= link_to vendor.category.name, category_path(vendor) %>, <%= vendor.category.name %></td>
+        <td><%= time_ago_in_words(vendor.category.created_at) %> ago</td>
         <td>
           <%= link_to 'Edit', edit_vendor_path(vendor), :class => 'btn btn-mini' %>
           <%= link_to 'Destroy', vendor_path(vendor), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>

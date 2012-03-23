@@ -3,7 +3,7 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Created</th>
+      <th>Created at</th>
       <th>Actions</th>
     </tr>
   </thead>
@@ -11,7 +11,7 @@
     <% @categories.each do |category| %>
       <tr>
         <td><%= link_to category.name, category_path(category) %></td>
-        <td><%= time_ago_in_words(category.created_at) %> ago, <%= Category.count %></td>
+        <td><%= category.created_at %></td>
         <td>
           <%= link_to 'Edit', edit_category_path(category), :class => 'btn btn-mini' %>
           <%= link_to 'Destroy', category_path(category), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>

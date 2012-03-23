@@ -13,6 +13,8 @@ Benchmark::Application.routes.draw do
 
   resources :vendors
 
+  resources :users
+
   root :to => 'vendors#index'
 
   # The priority is based upon order of creation:
